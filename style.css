@@ -385,9 +385,6 @@ main h2{
 	margin-top:-50px;
 	opacity:0.95;
 }
-#Price h2{
-	transform:scale(0.8);
-}
 /*jakbym chciał opacity zwykłe tło to poniżej kod*/
 	/*#Cennik::after{
 	content:url("Garda2.jpg");
@@ -402,7 +399,6 @@ main h2{
 	font-size: 17px;
 	color:white;
 	margin-top:20px;
-	transform:translateZ(0px) scale(0.85);
 }
 #Price table{
 	width:75vw;
