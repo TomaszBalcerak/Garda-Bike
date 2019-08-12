@@ -1,0 +1,610 @@
+*{
+	margin:0;
+	padding:0;
+	border:0;
+	box-sizing:border-box;
+	outline:none;
+}
+html{
+	overflow-x:hidden;
+	scroll-behavior: smooth;
+	font-family:'Oswald', sans-serif;
+	height:100%;
+}
+body{
+	max-width:100vw;
+	height:100%;
+}
+a:link 
+{
+    color: #000;
+	text-decoration: none;
+}
+a:visited 
+{
+    color: #000;
+}
+a:hover 
+{
+    color: #000;
+}
+a:active 
+{    
+	color: #000;
+}
+a:focus
+{
+	color:#000;
+}
+.wrapper{
+	overflow-x: hidden;
+}
+.header{
+	background-color: white;
+	opacity:0.85;
+	position:fixed;
+	top:0;
+	left:0;
+	height:15vh;
+	width:100vw;
+	padding:0 25px;
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 25px;
+	z-index:2;
+	box-shadow: 0px 0px 10px 3px black;
+	transition:opacity 1s;
+}
+.logo{
+	width:25vw;
+	height:15vh;
+	margin-left:-20px;
+	transition:transform 0.5s;
+}
+header h1{
+	position:absolute;
+	top:2vh;
+	left:50%;
+	transform:translateX(-50%);
+	text-align: center;
+	font-size:28px;
+}
+.socdiv{
+	position:absolute;
+	top:8vh;
+	left:50%;
+	transform:translateX(-50%);
+}
+.socialmedia{
+	display:inline-block;
+	width:20px;
+	height:20px;
+	margin:10px;
+	cursor:pointer;
+	transition:transform 0.3s;
+}
+.socialmedia:hover{
+	transform:translateY(-3px);
+}
+#menu-button{
+  background: transparent;
+  width: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all linear .3s;
+  padding: 4px;
+  z-index:8;
+  margin-right:5px;
+}
+#menu-button:hover{
+	transform:translateY(-3px);
+	box-shadow: 0px 2px 3px black;
+}
+#line-1,#line-2,#line-3{
+  width: 90%;
+  background: #000;
+  height: 8px;
+  margin: 4px auto;
+  border-radius: 2px;
+  transition: all linear .3s;
+}
+#line-1.active{
+-webkit-transform: translate(0px,12px) rotate(45deg);
+transform: translate(0px,12px) rotate(45deg);
+}
+#line-2.active{
+opacity: 0;
+}
+#line-3.active{
+-webkit-transform: translate(0px, -12px) rotate(-45deg);
+transform: translate(0px, -12px) rotate(-45deg);
+}
+#menu{
+  background: #3d3d3d;
+  background: rgba(0,0,0,0.7);
+  /*background-image: url("bicycle pattern.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:55% 100%;*/
+  width:60vw;
+  height:70vh;
+  padding: 10px;
+  color: #fff;
+  font-family:"Oswald", sans-serif;
+  display: none;
+  position: fixed;
+  top: 15%;
+  right:0%;
+  border-radius: 5px;
+  opacity:1;
+  z-index:1000;
+}
+#menu ul{
+  list-style: none;
+  display:flex;
+  flex-wrap: wrap;
+  height:65vh;
+}
+#menu ul li{
+  margin: 8px 0;
+  padding-bottom: 3px;
+  font-size: 1.8rem;
+  line-height: 1.0;
+  width:100%;
+  cursor:pointer;
+  overflow: hidden;
+  display:flex;
+  justify-content: center;
+}
+#menu ul li::before{
+	/*<div>Icons made by <a href="https://www.flaticon.com/authors/google" title="Google">Google</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>*/
+	content:url("img/icon/bike24.png")" >";
+	margin-bottom: -7px;
+	padding-right: 5px;
+	position:relative;
+	left:-600px;
+	color:black;
+	transition:left 0.5s;
+}
+#menu ul li:hover::before{
+	/*<div>Icons made by <a href="https://www.flaticon.com/authors/google" title="Google">Google</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>*/
+	left:0px;
+}
+#menu ul li::after{
+	content:url("img/icon/bike24.png")" >";
+	margin-bottom:-7px;
+	position:relative;
+	right:-600px;
+	padding-right: 5px;
+	display:inline-block;
+	transform:rotateY(180deg);
+	color:black;
+	transition:right 0.5s;
+}
+#menu ul li:hover::after{
+	right:0px;
+}
+#menu a{
+	color:white;
+	text-decoration: none;
+	transition:color 1.1s;
+}
+#menu li:hover a{
+	color:rgba(220,256,210);
+}
+.blur{
+	filter:blur(3px);
+}
+/*END HEADER*/
+/*MAIN*/
+#Home{
+	padding-top:15vh;
+	height:100vh;
+	background-image: url("img/Garda1.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	animation:scale 5s forwards;
+}
+@keyframes scale{
+	0%{transform:scale(1.0);}
+	100%{transform:scale(1.2);}
+}
+main h2{
+	text-align: center;
+}
+#Home, #About, #Rental, #Routes, #Price, #Galery, #Contact{
+	min-height:100vh;
+	height:100%;
+	padding: 10px;
+	justify-content:center;
+}
+#About h2, #Rental h2, #Routes h2, #Price h2, #Galery h2, #Contact h2{
+	margin-top:15vh;
+}
+/*Home Section*/
+
+#Home h2{
+	margin:60vh 10%;
+	transform:translateY(-50%);
+	color:white;
+	z-index:1;
+	font-size:25px;
+	cursor:default;
+}
+
+/*O nas section*/
+/*mechanizm wjezdzających rowerów dla podtytułów*/
+#About{
+	display:flex;
+	justify-content: center;
+}
+.subtitle{
+	width:100%;
+}
+.subtitle::before{
+	content:url("img/icon/bikebefore.png")" >";
+	position:relative;
+	left:-200px;
+	transition:left 2s;
+}
+.subtitle.in-view::before{
+	left:-20px;
+}
+.subtitle::after{
+	content:url("img/icon/bikebefore.png")" >";
+	display:inline-block;
+	transform:rotateY(180deg);
+	position:relative;
+	right:-200px;
+	transition:right 2s;
+}
+.subtitle.in-view::after{
+	right:-20px;
+}
+/*koniec mechanizmu*/
+#About{
+	display:flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	background-image: url("img/fishnets-and-hearts.png");
+}
+.aboutimage{
+	width:70vw;
+	height:60vh;
+	margin:20px;
+}
+.text-in-view{
+	transform:translateX(0);
+}
+#About img:nth-of-type(2), #About img:nth-of-type(3), #About img:nth-of-type(5){
+	width:90vw;
+	height:50vh;
+	margin:20px;
+}
+.text{
+	width:90vw;
+	font-size:16px;
+	line-height: 1.5;
+	text-align: justify;
+}
+.textContainer{
+	opacity:0;
+}
+.text-in-view{
+	animation:appear 2s forwards;
+}
+@keyframes appear{
+	0%{opacity:0;}
+	100%{opacity:1;}
+}
+/*Rental section*/
+#Rental{
+	display:flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+#Rental h3{
+	text-align: center;
+	color:green;
+	font-size:26px;
+	margin-top: 20px;
+}
+#Rental img{
+	max-width:90vw;
+}
+#Rental p{
+	margin:20px 0px;
+	max-width:90vw;
+	text-align: justify;
+}
+/*Routes section*/
+#Routes{
+	display:flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	background-image: url("img/fishnets-and-hearts.png");
+}
+.roadcontainer{
+	margin-top: 20px;
+	width:70vw;
+	height:50vh;
+	border:1px solid black;
+	background-color: white;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	cursor:pointer;
+}
+.roadcontainer:last-of-type{
+	margin-bottom: 30px;
+}
+.roadcontainer h3{
+	text-align: center;
+	padding:5px;
+	max-height:20%;
+}
+.roadphoto{
+	width:100%;
+	height:70%;
+	padding:1px;
+	border-top:1px solid black;
+	border-bottom:1px solid black;
+	overflow: hidden;
+}
+.roadphoto img{
+	width:100%;
+	height:100%;
+	transition:transform 1s;
+}
+.roadphoto img:hover{
+	transform:scale(1.2) rotate(3deg);
+}
+.roaddescription{
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	max-height:10%;
+}
+.roaddescription img:nth-of-type(2){
+	padding-left:20px;
+}
+/*Price section*/
+#Price{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-top:50px;
+	position:relative;
+	background-image: url("img/Garda2.jpg");
+	background-attachment: fixed;
+	background-size: 200%;
+	background-repeat: no-repeat;
+	z-index:-1;
+	margin-bottom: 70px;
+	perspective: 5px;
+	transform: translateZ(-2px) scale(1.2);
+	opacity:0.95;
+	height:100%;
+}
+#Price h2{
+	transform:scale(0.8);
+}
+/*jakbym chciał opacity zwykłe tło to poniżej kod*/
+	/*#Cennik::after{
+	content:url("Garda2.jpg");
+	position: fixed;
+	position:absolute;
+	opacity:0.7;
+	z-index:-1;
+}*/
+#Price p{
+	text-align: center;
+	width:90vw;
+	font-size: 17px;
+	color:white;
+	margin-top:20px;
+	transform:translateZ(0px) scale(0.85);
+}
+#Price table{
+	width:75vw;
+	color:white;
+	background-color:rgba(0, 0, 0, 0.7);
+	transform:translateZ(0px) scale(0.85);
+}
+#Price table th{
+	margin-bottom:10px;
+}
+#Price table td, th{
+	border:1px solid white;
+	text-align: center;
+	padding:2px;
+}
+/*Galeria section*/
+#Galery h2{
+	width:100%;
+	margin-bottom:20px;
+}
+#Galery h2::before{
+	content:url("img/icon/bikebefore.png");
+	margin-right:20px;
+}
+#Galery h2::after{
+	content:url("img/icon/bikebefore.png");
+	margin-left:20px;
+	display:inline-block;
+	transform:rotateY(180deg);
+}
+#Galery{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	padding-bottom:70px;
+	background-image: url("img/fishnets-and-hearts.png");
+}
+.myImg{
+	margin:10px;
+	cursor:pointer;
+	transition:0.3s;
+	width:200px;
+	height:200px;
+}
+.myImg:hover{
+	opacity:0.7;
+}
+/*The Modal of increasing img*/
+.modal{
+	display:none;/*hidden by default*/
+	position:fixed;/*Stay in place*/
+	z-index:1; /*Sit in top*/
+	padding-top:15vh; /*Location of the box*/
+	left:0;
+	top:0;
+	width:100vw;/*Full width*/
+	height:100vh;/*Full height*/
+	align-items: center;/*gdy bedzie nadany flex wysrodkuje*/
+	overflow:auto; /*Enable scroll if needed*/
+	background-color: rgb(0,0,0);/*Fallback color*/
+	background-color: rgba(0,0,0,0.9)/*Black w opacity*/
+}
+/*Modal Content (image)*/
+.modal-content{
+	display:block;
+	width:80vw;
+	height:80vh;
+	max-width:700px;
+}
+/*Add animation*/
+.modal-content{
+	animation:zoom 0.6s;
+}
+@keyframes zoom{
+	0%{transform:scale(0);}
+	100%{transform:scale(1);}
+}
+/*The Close Button*/
+.close{
+	position:absolute;
+	top:15vh;
+	right:5vw;
+	color:#aaa;
+	font-size:40px;
+	font-weight:bold;
+	transition:0.3s;
+}
+.close:hover, .close:focus{
+	color:white;
+	text-decoration: none;
+	cursor:pointer;
+}
+/*100% image width on smaller screens*/
+@media only screen and (max-width:700px){
+	.modal-content{
+		width:100%;
+		height:70%;
+		max-height:600px;
+		margin:auto;
+	}
+}
+/*Kontakt*/
+#Contact{
+	display:flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	background-image: url("img/bicycle pattern.jpg");
+	background-size:cover;
+	background-attachment: fixed;
+	background-position: center;
+}
+.contactcontainer{
+	margin-top:30px;
+	width:90vw;
+	display:flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(256, 256, 256, 0.6)
+}
+.item{
+	width:100%;
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+}
+.item img{
+	width:50px;
+	margin:0 48%;
+}
+.item p{
+	width:100%;
+	text-align: center;
+}
+form{
+	margin-top: 30px;
+	width:90vw;
+	display:flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+form p{
+	margin: 20px 0;
+	font-size: 24px;
+}
+label{
+	text-align: center;
+	width:100%;
+	padding:10px;
+}
+input{
+	width:50%;
+	background-color: lightgray;
+	padding:3px;
+	border:1px solid black;
+	transition:border 0.3s;
+}
+input:focus{
+	border:1px solid orange;
+}
+textarea{
+	background-color: lightgray;
+	width:50%;
+	padding:3px;
+	margin:0 20px;
+	height:100px;
+	border:1px solid black;
+	transition:border 0.3s;
+}
+textarea:focus{
+	border:1px solid orange;
+}
+input[type="submit"]{
+	margin:20px 20%;
+	width:15%;
+	padding: 5px;
+	background-color:darkgreen;
+	color:white;
+	border:1px solid black;
+	cursor:pointer;
+	transition:transform 0.4s;
+}
+input[type="submit"]:hover{
+	border:1px solid orange;
+	background-color:darkgreen;
+	color:white;
+	transform: scale(1.1);
+}
+/*Footer*/
+footer{
+	font-size: 12px;
+	background-color:#3d3d3d;
+	color:white;
+	text-align: center;
+	display:flex;
+	justify-content: space-between;
+	padding:5px 15px;
+}
