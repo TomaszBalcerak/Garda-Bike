@@ -270,7 +270,7 @@ main h2{
 	background-image: url("img/fishnets-and-hearts.png");
 }
 .aboutimage{
-	width:70vw;
+	width:55vw;
 	height:60vh;
 	margin:20px;
 }
@@ -398,13 +398,13 @@ main h2{
 	width:90vw;
 	font-size: 17px;
 	color:white;
-	margin-top:20px;
+	margin:20px 0px;
 }
 #Price table{
-	width:75vw;
+	width:80vw;
 	color:white;
 	background-color:rgba(0, 0, 0, 0.7);
-	transform:translateZ(0px) scale(0.85);
+	margin-bottom:25px;
 }
 #Price table th{
 	margin-bottom:10px;
@@ -437,47 +437,111 @@ main h2{
 	padding-bottom:70px;
 	background-image: url("img/fishnets-and-hearts.png");
 }
+#galeryContainer{
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	position:relative;
+	width:100vw;
+}
 .myImg{
 	margin:10px;
 	cursor:pointer;
 	transition:0.3s;
-	width:200px;
-	height:200px;
+	width:75vw;
+	height:400px;
 }
-.myImg:hover{
-	opacity:0.7;
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
-/*The Modal of increasing img*/
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+/*The Modal of increasing img
 .modal{
-	display:none;/*hidden by default*/
-	position:fixed;/*Stay in place*/
-	z-index:1; /*Sit in top*/
-	padding-top:15vh; /*Location of the box*/
+	display:none;  hidden by default
+	position:fixed;  Stay in place 
+	z-index:1;  Sit in top
+	padding-top:15vh;  Location of the box
 	left:0;
 	top:0;
-	width:100vw;/*Full width*/
-	height:100vh;/*Full height*/
-	align-items: center;/*gdy bedzie nadany flex wysrodkuje*/
-	overflow:auto; /*Enable scroll if needed*/
-	background-color: rgb(0,0,0);/*Fallback color*/
-	background-color: rgba(0,0,0,0.9)/*Black w opacity*/
+	width:100vw;  Full width
+	height:100vh;  Full height
+	align-items: center;  gdy bedzie nadany flex wysrodkuje
+	overflow:auto;   Enable scroll if needed
+	background-color: rgb(0,0,0);  Fallback color
+	background-color: rgba(0,0,0,0.6)  Black w opacity
 }
-/*Modal Content (image)*/
+Modal Content (image)
 .modal-content{
 	display:block;
-	width:80vw;
+	width:60vw;
 	height:80vh;
 	max-width:700px;
 }
-/*Add animation*/
+Add animation
 .modal-content{
 	animation:zoom 0.6s;
 }
 @keyframes zoom{
 	0%{transform:scale(0);}
 	100%{transform:scale(1);}
+}*/
+.arrow1{
+	position:absolute;
+	font-size:100px;
+	left:5px;
+	color:rgba(22,22,22,0.6);
+	outline:none;
 }
-/*The Close Button*/
+.arrow1:focus{
+	outline:none !important;
+}
+.arrow2{
+	position:absolute;
+	font-size:100px;
+	right:5px;
+	color:#717171;
+	outline:none;
+}
+.arrow1:hover, .arrow2:hover{
+	color:rgba(22,22,22,1);
+	cursor:pointer;
+	transform:scale(1.1);
+}
+.dots{
+	position:absolute;
+	bottom:4%;
+	left:50%;
+	transform:translateX(-50%);
+	width:75vw;
+	text-align: center;
+}
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: black;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+  background-color: #717171;
+}
+/*The Close Button
 .close{
 	position:absolute;
 	top:15vh;
@@ -492,7 +556,7 @@ main h2{
 	text-decoration: none;
 	cursor:pointer;
 }
-/*100% image width on smaller screens*/
+100% image width on smaller screens
 @media only screen and (max-width:700px){
 	.modal-content{
 		width:100%;
@@ -500,7 +564,7 @@ main h2{
 		max-height:600px;
 		margin:auto;
 	}
-}
+}*/
 /*Kontakt*/
 #Contact{
 	display:flex;

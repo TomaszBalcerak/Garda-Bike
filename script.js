@@ -96,7 +96,7 @@ function isElementInViewport(el) {
   window.addEventListener("resize", callbackFunc2,);
   window.addEventListener("scroll", callbackFunc2,);
 
-  //Modal Galery//
+  /*//Modal Galery//
   var modal = document.getElementById("myModal");
   //get the image and insert it inside the modal//
   var galeryImg = document.getElementsByClassName("myImg");
@@ -115,9 +115,48 @@ function isElementInViewport(el) {
   span.onclick = function(){
     modal.style.display="none";
   }
-
+*/
   $( document ).on( 'keydown', function ( e ) {
     if ( e.keyCode === 27 ) { // ESC
     $('.modal').css("display", "none");
 }
 });
+
+//SLIDER ZDJĘĆ//
+/*var im =document.getElementsByClassName("modal-content")[0];
+var arrow = document.getElementsByClassName("arrow1")[0];
+arrow.onclick = function(){
+  if(im.src=="img/galery/20.jpg"){
+  im.src="img/galery/30.jpg"
+}
+}NIEUDANA PRÓBA POWYZEJ*/
+
+/*UDANY SLIDER PONIŻEJ*/
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("myImg");
+  var dot = document.getElementsByClassName("dot");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dot.length; i++) {
+      dot[i].className = dot[i].className.replace(" active", "");
+  }
+  x[slideIndex-1].style.display = "flex";
+  dot[slideIndex-1].className += " active";  
+}
+/*KONIEC SLIDERA*/
