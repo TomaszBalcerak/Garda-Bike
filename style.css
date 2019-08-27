@@ -68,7 +68,7 @@ header h1{
 	left:50%;
 	transform:translateX(-50%);
 	text-align: center;
-	font-size:28px;
+	font-size:20px;
 }
 .socdiv{
 	position:absolute;
@@ -203,7 +203,7 @@ transform: translate(0px, -12px) rotate(-45deg);
 	height:100vh;
 	background-image: url("img/Garda1.jpg");
 	background-size: cover;
-	background-attachment: fixed;
+	background-attachment: scroll;
 	animation:scale 5s forwards;
 }
 @keyframes scale{
@@ -310,10 +310,19 @@ main h2{
 	font-size:26px;
 	margin-top: 20px;
 }
+.photobike{
+	display:flex;
+	justify-content: center;
+}
 #Rental img{
 	max-width:90vw;
 }
-#Rental p{
+.rentaldescribe{
+	margin:20px 0px;
+	max-width:90vw;
+	text-align: justify;
+}
+.descriptionbike p{
 	margin:20px 0px;
 	max-width:90vw;
 	text-align: justify;
@@ -500,7 +509,7 @@ Add animation
 }*/
 .arrow1{
 	position:absolute;
-	font-size:100px;
+	font-size:70px;
 	left:5px;
 	color:rgba(22,22,22,0.6);
 	outline:none;
@@ -510,7 +519,7 @@ Add animation
 }
 .arrow2{
 	position:absolute;
-	font-size:100px;
+	font-size:70px;
 	right:5px;
 	color:#717171;
 	outline:none;
@@ -663,4 +672,183 @@ footer{
 	display:flex;
 	justify-content: space-between;
 	padding:5px 15px;
+}
+@media all and (min-width:768px){
+	header h1{
+		font-size:30px;
+	}
+	#Home{
+	padding-top:15vh;
+	height:100vh;
+	background-image: url("img/Garda1.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	animation:scale 5s forwards;
+}
+#Home h2{
+	margin:40vh 10%;
+}
+	#About img:nth-of-type(2), #About img:nth-of-type(3), #About img:nth-of-type(5){
+	width:70vw;
+	height:50vh;
+	margin:20px;
+}
+	.text{
+	width:80vw;
+	font-size:18px;
+	line-height: 1.5;
+	text-align: justify;
+}
+.roadcontainer{
+	margin-top: 20px;
+	width:50vw;
+}
+#Price{
+	background-image: url("img/Garda2.jpg");
+	background-attachment: fixed;
+	background-size: 200%;
+	background-repeat: no-repeat;
+	z-index:-1;
+	margin-bottom: 70px;
+	perspective: 5px;
+	transform: translateZ(-2px) scale(1.2);
+	opacity:0.95;
+	height:100%;
+}
+#Price h2{
+	transform:scale(0.8);
+	margin-top:150px;
+}
+#Price p{
+	text-align: center;
+	width:90vw;
+	font-size: 17px;
+	color:white;
+	margin-top:20px;
+	transform:translateZ(0px) scale(0.85);
+}
+#Price table{
+	width:75vw;
+	color:white;
+	background-color:rgba(0, 0, 0, 0.7);
+	transform:translateZ(0px) scale(0.85);
+}
+.arrow1{
+	font-size:90px;
+	left:10px;
+}
+.arrow2{
+	font-size:90px;
+	right:10px;
+}
+#Contact{
+	background-attachment: fixed;
+	background-position: center;
+	background-size:cover;
+}
+}
+@media all and (min-width:1024px){
+.logo{
+	width:16vw;
+	height:15vh;
+	margin-left:-20px;
+	transition:transform 0.5s;
+}
+.aboutimage{
+	width:40vw;
+	height:60vh;
+	margin:20px;
+}
+#About img:nth-of-type(2), #About img:nth-of-type(3), #About img:nth-of-type(5){
+	width:50vw;
+	height:60vh;
+	margin:20px;
+}
+.bikecontainer{
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+#Rental h3{
+	text-align: center;
+	color:green;
+	font-size:26px;
+	margin-top: 20px;
+}
+.photobike{
+	display:flex;
+	justify-content: center;
+}
+#Rental img{
+	max-width:90vw;
+}
+.descriptionbike{
+	display:flex;
+	align-items: flex-end;
+}
+.descriptionbike>p{
+	margin:20px 0px;
+	max-width:40vw;
+	text-align: justify;
+}
+.roadcontainer{
+	margin-top: 20px;
+	width:30vw;
+	height:50vh;
+	margin-right:10px;
+}
+#Price p{
+	font-size: 20px;
+}
+#Price table{
+	width:50vw;
+	color:white;
+	background-color:rgba(0, 0, 0, 0.7);
+	margin-bottom:25px;
+}
+#Price table th{
+	margin-bottom:10px;
+	font-size:20px;
+}
+#Price table td, th{
+	border:1px solid white;
+	text-align: center;
+	padding:2px;
+}
+.myImg{
+	margin:20px;
+	width:60vw;
+	height:65vh;
+}
+.arrow1{
+	font-size:100px;
+	left:100px;
+}
+.arrow2{
+	font-size:100px;
+	right:100px;
+}
+.dots{
+	position:absolute;
+	bottom:6%;
+	width:85vw;
+}
+.item{
+	width:30%;
+	margin-top: 50px;
+}
+.item img{
+	width:60px;
+}
+input{
+	width:40%;
+}
+textarea{
+	width:40%;
+}
+input[type="submit"]{
+	margin:20px 40%;
+	width:13%;
+}
 }
