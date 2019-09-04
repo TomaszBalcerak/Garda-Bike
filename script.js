@@ -34,6 +34,16 @@ $( document ).on( 'keydown', function ( e ) {
     $("#line-3").removeClass("active");
     $("main").removeClass("blur"); }
 });
+
+/*//info o budowie bloga//
+let blog = document.getElementsByClassName("blog")[0];
+blog.addEventListener("click", blogfunction);
+
+function blogfunction(){
+  alert("Blog w przygotowaniu - zapraszamy wkrótce")
+}*/
+
+
 //efekt zanikania zdjęcia//
   //zmienne globalne wykorzystywane we wszystkich projektach ponizej//
   const $doc = $(document);/*pozwala stosować jquery*/
@@ -96,12 +106,26 @@ function isElementInViewport(el) {
   window.addEventListener("resize", callbackFunc2,);
   window.addEventListener("scroll", callbackFunc2,);
 
+
+//Info about routes//
+
+let routbox = document.querySelectorAll(".roadcontainer");
+let roadphoto = document.querySelectorAll(".roadphoto");
+
+let i=0;
+for(i=0; i<routbox.length; i++){
+routbox[i].addEventListener("click", routfunction);
+}
+function routfunction(){
+ this.classList.toggle("routalert");
+ $(this).children(".roadphoto").toggleClass("blurry");
+};
+
   /*//Modal Galery//
   var modal = document.getElementById("myModal");
   //get the image and insert it inside the modal//
   var galeryImg = document.getElementsByClassName("myImg");
   var modalImg = document.getElementById("img01");
-
   for(i=0; i<galeryImg.length; i++){
   galeryImg[i].onclick = function(){
     modal.style.display="flex";
@@ -110,7 +134,6 @@ function isElementInViewport(el) {
 }
   //Get the <span> element that closes the modal//
   var span = document.getElementsByClassName("close")[0];
-
   //When the user clicks on <span> (x), close the modal
   span.onclick = function(){
     modal.style.display="none";
@@ -160,3 +183,19 @@ function showDivs(n) {
   dot[slideIndex-1].className += " active";  
 }
 /*KONIEC SLIDERA*/
+
+//Show google maps//
+let item = document.querySelectorAll(".item")[0];
+let googlemaps = document.querySelector(".googlemaps");
+let showmap = document.querySelector(".showmap");
+
+item.addEventListener("click", showfunction);
+
+function showfunction(){
+  googlemaps.classList.toggle("googlemapsyes");
+  if(googlemaps.classList.contains("googlemapsyes")){
+  showmap.innerHTML="Ukryj";
+} else {
+showmap.innerHTML="Kliknij by nas znaleźć"
+}
+}

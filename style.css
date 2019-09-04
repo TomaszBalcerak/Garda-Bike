@@ -36,9 +36,6 @@ a:focus
 {
 	color:#000;
 }
-.wrapper{
-	overflow-x: hidden;
-}
 .header{
 	background-color: white;
 	opacity:0.85;
@@ -64,28 +61,30 @@ a:focus
 }
 header h1{
 	position:absolute;
-	top:2vh;
+	top:50%;
 	left:50%;
-	transform:translateX(-50%);
+	transform:translateX(-50%) translateY(-50%);
 	text-align: center;
 	font-size:20px;
 }
 .socdiv{
-	position:absolute;
-	top:8vh;
-	left:50%;
-	transform:translateX(-50%);
+	position:fixed;
+	z-index: 5;
+	top:20vh;
+	left:0%;
+	background-color: rgba(256,256,256,0.7);
+	border-radius:0% 50% 50% 0%;
 }
 .socialmedia{
-	display:inline-block;
-	width:20px;
-	height:20px;
-	margin:10px;
+	display:block;
+	width:22px;
+	height:22px;
+	margin:10px 15px 10px 5px;
 	cursor:pointer;
 	transition:transform 0.3s;
 }
 .socialmedia:hover{
-	transform:translateY(-3px);
+	transform:translateX(3px);
 }
 #menu-button{
   background: transparent;
@@ -127,8 +126,8 @@ transform: translate(0px, -12px) rotate(-45deg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position:55% 100%;*/
-  width:60vw;
-  height:70vh;
+  width:50vw;
+  height:85vh;
   padding: 10px;
   color: #fff;
   font-family:"Oswald", sans-serif;
@@ -143,19 +142,21 @@ transform: translate(0px, -12px) rotate(-45deg);
 #menu ul{
   list-style: none;
   display:flex;
+  align-items: space-between;
   flex-wrap: wrap;
-  height:65vh;
+  height:85vh;
 }
 #menu ul li{
   margin: 8px 0;
   padding-bottom: 3px;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   line-height: 1.0;
   width:100%;
   cursor:pointer;
   overflow: hidden;
   display:flex;
   justify-content: center;
+  overflow-y: hidden;
 }
 #menu ul li::before{
 	/*<div>Icons made by <a href="https://www.flaticon.com/authors/google" title="Google">Google</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>*/
@@ -164,7 +165,7 @@ transform: translate(0px, -12px) rotate(-45deg);
 	padding-right: 5px;
 	position:relative;
 	left:-600px;
-	color:black;
+	color:white;
 	transition:left 0.5s;
 }
 #menu ul li:hover::before{
@@ -179,7 +180,7 @@ transform: translate(0px, -12px) rotate(-45deg);
 	padding-right: 5px;
 	display:inline-block;
 	transform:rotateY(180deg);
-	color:black;
+	color:white;
 	transition:right 0.5s;
 }
 #menu ul li:hover::after{
@@ -203,17 +204,20 @@ transform: translate(0px, -12px) rotate(-45deg);
 	height:100vh;
 	background-image: url("img/Garda1.jpg");
 	background-size: cover;
-	background-attachment: scroll;
 	animation:scale 5s forwards;
+	overflow: hidden;
+	display:flex;
+	align-items: center;
 }
 @keyframes scale{
 	0%{transform:scale(1.0);}
 	100%{transform:scale(1.2);}
 }
-main h2{
+.subtitle{
 	text-align: center;
+	width:100%;
 }
-#Home, #About, #Rental, #Routes, #Price, #Galery, #Contact{
+#About, #Rental, #Routes, #Price, #Galery, #Contact{
 	min-height:100vh;
 	height:100%;
 	padding: 10px;
@@ -225,12 +229,14 @@ main h2{
 /*Home Section*/
 
 #Home h2{
-	margin:60vh 10%;
+	margin:0% 10%;
+	width:100%;
 	transform:translateY(-50%);
 	color:white;
 	z-index:1;
 	font-size:25px;
 	cursor:default;
+	text-align: center;
 }
 
 /*O nas section*/
@@ -238,9 +244,6 @@ main h2{
 #About{
 	display:flex;
 	justify-content: center;
-}
-.subtitle{
-	width:100%;
 }
 .subtitle::before{
 	content:url("img/icon/bikebefore.png")" >";
@@ -271,19 +274,19 @@ main h2{
 }
 .aboutimage{
 	width:55vw;
-	height:60vh;
+	height:55vh;
 	margin:20px;
 }
 .text-in-view{
 	transform:translateX(0);
 }
-#About img:nth-of-type(2), #About img:nth-of-type(3), #About img:nth-of-type(5){
-	width:90vw;
+#About img:nth-of-type(2), #About img:nth-of-type(3),  #About img:nth-of-type(5){
+	width:80vw;
 	height:50vh;
 	margin:20px;
 }
 .text{
-	width:90vw;
+	width:80vw;
 	font-size:16px;
 	line-height: 1.5;
 	text-align: justify;
@@ -306,6 +309,7 @@ main h2{
 }
 #Rental h3{
 	text-align: center;
+	width:80%;
 	color:green;
 	font-size:26px;
 	margin-top: 20px;
@@ -315,16 +319,21 @@ main h2{
 	justify-content: center;
 }
 #Rental img{
-	max-width:90vw;
+	max-width:100vw;
 }
 .rentaldescribe{
 	margin:20px 0px;
-	max-width:90vw;
+	max-width:80vw;
 	text-align: justify;
+}
+.bikecontainer{
+	display:flex;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 .descriptionbike p{
 	margin:20px 0px;
-	max-width:90vw;
+	max-width:80vw;
 	text-align: justify;
 }
 /*Routes section*/
@@ -376,8 +385,31 @@ main h2{
 	align-items: center;
 	max-height:10%;
 }
+.roaddescription img:nth-of-type(1){
+	height:20px;
+}
 .roaddescription img:nth-of-type(2){
 	padding-left:20px;
+	height:20px;
+}
+.routalert{
+	position:relative;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	opacity:0.8;
+}
+.blurry{
+	filter:sepia(100%);
+}
+.routalert::after{
+	content:"Więcej informacji wkrótce...";
+	position:absolute;
+	top:50%;
+	background-color: rgba(256,256,256,0.7);
+	width:90%;
+	text-align: center;
+	font-size: 30px;
 }
 /*Price section*/
 #Price{
@@ -385,13 +417,12 @@ main h2{
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	margin-top:50px;
 	position:relative;
 	background-image: url("img/Garda2.jpg");
-	background-size: 100;
+	background-size: cover;
 	background-repeat: no-repeat;
 	z-index:-1;
-	margin-top:-50px;
+	margin-top:0px;
 	opacity:0.95;
 }
 /*jakbym chciał opacity zwykłe tło to poniżej kod*/
@@ -451,7 +482,7 @@ main h2{
 	align-items: center;
 	justify-content: center;
 	position:relative;
-	width:100vw;
+	width:90vw;
 }
 .myImg{
 	margin:10px;
@@ -593,6 +624,9 @@ Add animation
 	justify-content: center;
 	background-color: rgba(256, 256, 256, 0.6)
 }
+.contactcontainer a{
+	text-align: center;
+}
 .item{
 	width:100%;
 	display:flex;
@@ -600,14 +634,46 @@ Add animation
 	justify-content: center;
 	align-items: center;
 	margin-top: 30px;
+	cursor:pointer;
+	position:relative;
 }
 .item img{
 	width:50px;
-	margin:0 48%;
+	margin-left:auto;
+	margin-right: auto
 }
 .item p{
 	width:100%;
 	text-align: center;
+}
+.showmap{
+	font-size: 13px;
+	font-style: italic;
+}
+.showmap::before{
+	content:"> ";
+	position:relative;
+	left:-10px;
+	animation:moveleftarrow 0.7s infinite alternate;
+}
+.showmap::after{
+	content:" <";
+	position:relative;
+	left:10px;
+	animation:moverightarrow 0.7s infinite alternate;
+}
+@keyframes moveleftarrow{
+	100%{left:0px;};
+}
+@keyframes moverightarrow{
+	100%{left:0px;};
+}
+.googlemaps{
+	height:0px;
+	transition:1s;
+}
+.googlemapsyes{
+	height:45vh;
 }
 form{
 	margin-top: 30px;
@@ -671,8 +737,22 @@ footer{
 	text-align: center;
 	display:flex;
 	justify-content: space-between;
+	align-items: center;
 	padding:5px 15px;
 }
+.socdivtom{
+	display:inline-block;
+	width:20px;
+	height:20px;
+	margin-left:10px;
+}
+footer span{
+	display:flex;
+	align-items: center;
+}
+/*MEDIA QUERIES*/
+
+
 @media all and (min-width:768px){
 	header h1{
 		font-size:30px;
@@ -685,16 +765,13 @@ footer{
 	background-attachment: fixed;
 	animation:scale 5s forwards;
 }
-#Home h2{
-	margin:40vh 10%;
-}
 	#About img:nth-of-type(2), #About img:nth-of-type(3), #About img:nth-of-type(5){
 	width:70vw;
 	height:50vh;
 	margin:20px;
 }
 	.text{
-	width:80vw;
+	width:70vw;
 	font-size:18px;
 	line-height: 1.5;
 	text-align: justify;
@@ -733,13 +810,18 @@ footer{
 	background-color:rgba(0, 0, 0, 0.7);
 	transform:translateZ(0px) scale(0.85);
 }
+.myImg{
+	margin:20px;
+	width:55vw;
+	height:65vh;
+}
 .arrow1{
-	font-size:90px;
-	left:10px;
+	font-size:70px;
+	left:30px;
 }
 .arrow2{
-	font-size:90px;
-	right:10px;
+	font-size:70px;
+	right:30px;
 }
 #Contact{
 	background-attachment: fixed;
@@ -749,10 +831,14 @@ footer{
 }
 @media all and (min-width:1024px){
 .logo{
-	width:16vw;
+	width:12vw;
 	height:15vh;
 	margin-left:-20px;
 	transition:transform 0.5s;
+}
+.header{
+	height:15vh;
+	transition:height 1s;
 }
 .aboutimage{
 	width:40vw;
@@ -767,21 +853,23 @@ footer{
 .bikecontainer{
 	display:flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
+	width:80vw;
 }
 #Rental h3{
 	text-align: center;
 	color:green;
 	font-size:26px;
 	margin-top: 20px;
+	width:10vw;
 }
 .photobike{
 	display:flex;
 	justify-content: center;
 }
 #Rental img{
-	max-width:90vw;
+	max-width:30vw;
 }
 .descriptionbike{
 	display:flex;
@@ -834,6 +922,9 @@ footer{
 	bottom:6%;
 	width:85vw;
 }
+.contactcontainer{
+	align-items: flex-start;
+}
 .item{
 	width:30%;
 	margin-top: 50px;
@@ -852,3 +943,144 @@ input[type="submit"]{
 	width:13%;
 }
 }
+
+/*LANDSCAPE WIEV*/
+@media (orientation: landscape) and (max-height:500px){
+	.logo{
+	width:12vw;
+	height:15vh;
+	margin-left:-20px;
+	transition:transform 0.5s;
+}
+#menu{
+  background: #3d3d3d;
+  background: rgba(0,0,0,0.7);
+  /*background-image: url("bicycle pattern.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:55% 100%;*/
+  width:100vw;
+  height:15vh;
+  padding:0px;
+  color: #fff;
+  font-family:"Oswald", sans-serif;
+  display: none;
+  position: fixed;
+  top: 15%;
+  right:0%;
+  border-radius: 5px;
+  opacity:1;
+  z-index:1000;
+}
+#menu ul{
+  list-style: none;
+  display:flex;
+  flex-wrap: nowrap;
+  height:inherit;
+}
+#menu ul li{
+  margin: 8px 0;
+  padding-bottom: 3px;
+  font-size: 20px;
+  line-height: 1;
+  width:100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#menu ul li a{
+	display:block;
+}
+#menu ul li::before{
+	display:none;
+}
+#menu ul li::after{
+	display:none;
+}
+.socdiv{
+	position:fixed;
+	z-index: 5;
+	top:30vh;
+	left:0%;
+	background-color: rgba(256,256,256,0.7);
+	border-radius:0% 50% 50% 0%;
+}
+.roadcontainer{
+	margin:20px 10% 0px 10%;
+	width:45vw;
+	height:65vh;
+}
+.aboutimage{
+	width:50vw;
+	height:65vh;
+	margin:20px;
+}
+.text-in-view{
+	transform:translateX(0);
+}
+#About img:nth-of-type(2), #About img:nth-of-type(3),  #About img:nth-of-type(5){
+	width:50vw;
+	height:60vh;
+	margin:20px;
+}
+.myImg{
+	margin:20px;
+	width:55vw;
+	height:70vh;
+}
+.arrow1{
+	left:30px;
+}
+.arrow2{
+	right:30px;
+}
+.dots{
+	position:absolute;
+	bottom:7%;
+}
+.googlemapsyes{
+	height:65vh;
+}
+}
+@media (orientation: landscape) and (min-width:1150px){
+	#menu ul li::before{
+	display:flex;
+	margin-bottom: 0px;
+}
+#menu ul li::after{
+	display:flex;
+	margin-bottom: 0px;
+}
+.aboutimage{
+	width:35vw;
+	height:70vh;
+}
+#About img:nth-of-type(2), #About img:nth-of-type(3),  #About img:nth-of-type(5){
+	width:45vw;
+	height:60vh;
+	margin:20px;
+}
+.roadcontainer{
+	margin:20px 5px 0px 5px;
+	width:30vw;
+	height:50vh;
+}
+.myImg{
+	margin:20px;
+	width:50vw;
+	height:75vh;
+	min-height:200px;
+}
+.arrow1{
+	left:60px;
+}
+.arrow2{
+	right:60px;
+}
+.dots{
+	position:absolute;
+	bottom:7%;
+}
+}
+
