@@ -13,6 +13,8 @@ html{
 }
 body{
 	height: calc(var(--vh, 1vh) * 100);
+	min-height: -webkit-fill-available;
+	transition:1s;
 }
 .all{
 	overflow-x: hidden;
