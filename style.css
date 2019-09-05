@@ -12,8 +12,8 @@ html{
 	height:100%;
 }
 body{
-	max-width:100vw;
-	height:100%;
+	height:95vh;
+	max-height:95vh;
 }
 .all{
 	overflow-x: hidden;
@@ -41,7 +41,7 @@ a:focus
 }
 .header{
 	background-color: white;
-	opacity:0.85;
+	opacity:1;
 	position:fixed;
 	top:0;
 	left:0;
@@ -129,7 +129,7 @@ transform: translate(0px, -12px) rotate(-45deg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position:55% 100%;*/
-  width:50vw;
+  width:65vw;
   height:85vh;
   padding: 10px;
   color: #fff;
@@ -485,14 +485,13 @@ transform: translate(0px, -12px) rotate(-45deg);
 	align-items: center;
 	justify-content: center;
 	position:relative;
-	width:90vw;
+	width:100vw;
 }
 .myImg{
 	margin:10px;
-	cursor:pointer;
 	transition:0.3s;
-	width:75vw;
-	height:400px;
+	width:70vw;
+	height:70vh;
 }
 /* Fading animation */
 .fade {
@@ -568,13 +567,13 @@ Add animation
 	bottom:4%;
 	left:50%;
 	transform:translateX(-50%);
-	width:75vw;
+	width:70vw;
 	text-align: center;
 }
 .dot {
   cursor: pointer;
-  height: 10px;
-  width: 10px;
+  height: 7px;
+  width: 7px;
   margin: 0 2px;
   background-color: black;
   border-radius: 50%;
@@ -760,6 +759,9 @@ footer span{
 	header h1{
 		font-size:30px;
 	}
+	.logo{
+		width:15vw;
+	}
 	#Home{
 	padding-top:15vh;
 	height:100vh;
@@ -820,11 +822,11 @@ footer span{
 }
 .arrow1{
 	font-size:70px;
-	left:30px;
+	left:60px;
 }
 .arrow2{
 	font-size:70px;
-	right:30px;
+	right:60px;
 }
 #Contact{
 	background-attachment: fixed;
@@ -914,16 +916,20 @@ footer span{
 }
 .arrow1{
 	font-size:100px;
-	left:100px;
+	left:150px;
 }
 .arrow2{
 	font-size:100px;
-	right:100px;
+	right:150px;
 }
 .dots{
 	position:absolute;
 	bottom:6%;
 	width:85vw;
+}
+.dot{
+	width:10px;
+	height:10px;
 }
 .contactcontainer{
 	align-items: flex-start;
@@ -949,11 +955,37 @@ input[type="submit"]{
 
 /*LANDSCAPE WIEV*/
 @media (orientation: landscape) and (max-height:500px){
+	.header{
+	height:20vh;
+}
 	.logo{
 	width:12vw;
-	height:15vh;
+	height:20vh;
 	margin-left:-20px;
 	transition:transform 0.5s;
+}
+#menu-button{
+  width: 45px;
+  padding: 3px;
+}
+#line-1,#line-2,#line-3{
+  width: 90%;
+  background: #000;
+  height: 5px;
+  margin: 4px auto;
+  border-radius: 2px;
+  transition: all linear .3s;
+}
+#line-1.active{
+-webkit-transform: translate(0px,9px) rotate(45deg);
+transform: translate(0px,9px) rotate(45deg);
+}
+#line-2.active{
+opacity: 0;
+}
+#line-3.active{
+-webkit-transform: translate(0px, -9px) rotate(-45deg);
+transform: translate(0px, -9px) rotate(-45deg);
 }
 #menu{
   background: #3d3d3d;
@@ -963,13 +995,13 @@ input[type="submit"]{
   background-size: cover;
   background-position:55% 100%;*/
   width:100vw;
-  height:15vh;
+  height:20vh;
   padding:0px;
   color: #fff;
   font-family:"Oswald", sans-serif;
   display: none;
   position: fixed;
-  top: 15%;
+  top: 20%;
   right:0%;
   border-radius: 5px;
   opacity:1;
@@ -1004,19 +1036,14 @@ input[type="submit"]{
 .socdiv{
 	position:fixed;
 	z-index: 5;
-	top:30vh;
+	top:40vh;
 	left:0%;
 	background-color: rgba(256,256,256,0.7);
 	border-radius:0% 50% 50% 0%;
 }
-.roadcontainer{
-	margin:20px 10% 0px 10%;
-	width:45vw;
-	height:65vh;
-}
 .aboutimage{
-	width:50vw;
-	height:65vh;
+	width:45vw;
+	height:70vh;
 	margin:20px;
 }
 .text-in-view{
@@ -1027,16 +1054,46 @@ input[type="submit"]{
 	height:60vh;
 	margin:20px;
 }
+.roadcontainer{
+	margin:20px 10% 0px 10%;
+	width:45vw;
+	max-width: 400px;
+	height:75vh;
+}
+.roadcontainer h3{
+	text-align: center;
+	padding:5px;
+	max-height:25%;
+}
+.roadphoto{
+	height:65%;
+}
+.roaddescription{
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	max-height:10%;
+}
+.routalert{
+	position:relative;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	opacity:0.8;
+}
+.routalert::after{
+	font-size: 20px;
+}
 .myImg{
 	margin:20px;
 	width:55vw;
 	height:70vh;
 }
 .arrow1{
-	left:30px;
+	left:50px;
 }
 .arrow2{
-	right:30px;
+	right:50px;
 }
 .dots{
 	position:absolute;
@@ -1057,17 +1114,17 @@ input[type="submit"]{
 }
 .aboutimage{
 	width:35vw;
-	height:70vh;
+	height:75vh;
 }
 #About img:nth-of-type(2), #About img:nth-of-type(3),  #About img:nth-of-type(5){
-	width:45vw;
-	height:60vh;
+	width:40vw;
+	height:65vh;
 	margin:20px;
 }
 .roadcontainer{
 	margin:20px 5px 0px 5px;
 	width:30vw;
-	height:50vh;
+	height:75vh;
 }
 .myImg{
 	margin:20px;
@@ -1076,10 +1133,10 @@ input[type="submit"]{
 	min-height:200px;
 }
 .arrow1{
-	left:60px;
+	left:120px;
 }
 .arrow2{
-	right:60px;
+	right:120px;
 }
 .dots{
 	position:absolute;
