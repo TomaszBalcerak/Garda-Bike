@@ -542,7 +542,7 @@ Add animation
 .arrow1{
 	position:absolute;
 	font-size:70px;
-	left:5px;
+	left:2px;
 	color:rgba(22,22,22,0.6);
 	outline:none;
 }
@@ -552,7 +552,7 @@ Add animation
 .arrow2{
 	position:absolute;
 	font-size:70px;
-	right:5px;
+	right:2px;
 	color:#717171;
 	outline:none;
 }
@@ -566,7 +566,7 @@ Add animation
 	bottom:4%;
 	left:50%;
 	transform:translateX(-50%);
-	width:70vw;
+	width:80vw;
 	text-align: center;
 }
 .dot {
