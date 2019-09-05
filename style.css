@@ -12,8 +12,7 @@ html{
 	height:100%;
 }
 body{
-	height:95vh;
-	max-height:95vh;
+	height: calc(var(--vh, 1vh) * 100);
 }
 .all{
 	overflow-x: hidden;
@@ -490,8 +489,8 @@ transform: translate(0px, -12px) rotate(-45deg);
 .myImg{
 	margin:10px;
 	transition:0.3s;
-	width:70vw;
-	height:70vh;
+	width:80vw;
+	height:60vh;
 }
 /* Fading animation */
 .fade {
